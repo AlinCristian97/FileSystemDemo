@@ -25,6 +25,7 @@ namespace ConsoleUI
                 "Robert Smith"
             };
 
+            string path = @"E:\Temp\Demos\FileSystem\FileIO";
             string textFilePath = @"E:\Temp\Demos\FileSystem\FileIO\test.txt";
             
             File.WriteAllLines(textFilePath, customers);
@@ -32,6 +33,17 @@ namespace ConsoleUI
             foreach (string customer in File.ReadAllLines(textFilePath))
             {
                 Console.WriteLine($"Customer: {customer}");
+            }
+
+            var myDataDirectory = new DirectoryInfo(path);
+
+            FileInfo[] txtFiles = myDataDirectory.GetFiles("*.txt", SearchOption.AllDirectories);
+
+            Console.WriteLine("Matches: {0}", txtFiles.Length);
+
+            foreach (FileInfo file in txtFiles)
+            {
+                Console.WriteLine($"{file.Name}: {file.Length} bytes");
             }
         }
     }
