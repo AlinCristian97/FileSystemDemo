@@ -86,6 +86,24 @@ namespace ConsoleUI
             Console.WriteLine("Everything: {0}", streamReader.ReadToEnd());
             
             streamReader.Close();
+
+            string textFilePath4 = @"E:\Temp\Demos\FileSystem\FileIO\textBinaryWriterReader.txt";
+
+            var datFile = new FileInfo(textFilePath4);
+
+            var binaryWriter = new BinaryWriter(datFile.OpenWrite());
+
+            string rndText = "Random text";
+            int myAge = 42;
+            double height = 1.70;
+            
+            binaryWriter.Write(rndText);
+            binaryWriter.Write(myAge);
+            binaryWriter.Write(height);
+            
+            binaryWriter.Close();
+            
+            
         }
     }
 }
