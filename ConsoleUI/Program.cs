@@ -18,7 +18,21 @@ namespace ConsoleUI
             Console.WriteLine(alinDirectory.Attributes);
             Console.WriteLine(alinDirectory.CreationTime);
 
-            Directory.Delete(@"C:\Users\Alin-PC\C#DataTemp");
+            string[] customers =
+            {
+                "Bob Smith",
+                "Sally Smith",
+                "Robert Smith"
+            };
+
+            string textFilePath = @"E:\Temp\Demos\FileSystem\FileIO\test.txt";
+            
+            File.WriteAllLines(textFilePath, customers);
+
+            foreach (string customer in File.ReadAllLines(textFilePath))
+            {
+                Console.WriteLine($"Customer: {customer}");
+            }
         }
     }
 }
