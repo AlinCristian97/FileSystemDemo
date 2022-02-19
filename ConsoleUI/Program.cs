@@ -13,7 +13,8 @@ namespace ConsoleUI
 
             foreach (string file in files)
             {
-                Console.WriteLine(Path.GetFileNameWithoutExtension(file));
+                var info = new FileInfo(file);
+                Console.WriteLine($"{Path.GetFileName(file)}: {info.Length} bytes");
             }
         }
     }
