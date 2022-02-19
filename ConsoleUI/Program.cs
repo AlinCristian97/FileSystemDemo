@@ -102,8 +102,14 @@ namespace ConsoleUI
             binaryWriter.Write(height);
             
             binaryWriter.Close();
+
+            var binaryReader = new BinaryReader(datFile.OpenRead());
+
+            Console.WriteLine(binaryReader.ReadString());
+            Console.WriteLine(binaryReader.ReadInt32());
+            Console.WriteLine(binaryReader.ReadDouble());
             
-            
+            binaryReader.Close();
         }
     }
 }
