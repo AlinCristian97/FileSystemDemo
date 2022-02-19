@@ -12,9 +12,9 @@ namespace ConsoleUI
             string[] files = Directory.GetFiles(rootPath);
             string destinationFolder = @"E:\Temp\Demos\FileSystem\SubFolder1\";
 
-            for (int i = 0; i < files.Length; i++)
+            foreach (string file in files)
             {
-                File.Copy(files[i], $"{destinationFolder}{i}.txt", true);
+                File.Move(file, $"{destinationFolder}{Path.GetFileName(file)}");
             }
         }
     }
