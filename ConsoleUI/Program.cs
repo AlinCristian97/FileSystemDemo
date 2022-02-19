@@ -13,7 +13,7 @@ namespace ConsoleUI
 
             foreach (string file in files)
             {
-                Console.WriteLine(file);
+                Console.WriteLine(Path.GetFileName(file));
             }
         }
     }
