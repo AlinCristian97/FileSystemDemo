@@ -33,6 +33,21 @@ namespace ConsoleUI
             {
                 Console.WriteLine($"{person.FirstName} {person.LastName}: {person.Url}");
             }
+            
+            people.Add(new Person {FirstName = "Greg", LastName = "Jones", Url = "www.gregjones.com"});
+
+            var output = new List<string>();
+
+            foreach (Person person in people)
+            {
+                output.Add($"{person.FirstName},{person.LastName},{person.Url}");
+            }
+
+            Console.WriteLine("Writing to text file");
+
+            File.WriteAllLines(filePath, output);
+
+            Console.WriteLine("All entries written");
         }
     }
 }
