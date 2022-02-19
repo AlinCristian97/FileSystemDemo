@@ -9,12 +9,15 @@ namespace ConsoleUI
         {
             string rootPath = @"E:\Temp\Demos\FileSystem";
 
-            var files = Directory.GetFiles(rootPath, "*", SearchOption.AllDirectories);
+            bool directoryExists = Directory.Exists(@"E:\Temp\Demos\FileSystem\SubFolder3");
 
-            foreach (string file in files)
+            if (directoryExists)
             {
-                var info = new FileInfo(file);
-                Console.WriteLine($"{Path.GetFileName(file)}: {info.Length} bytes");
+                Console.WriteLine("The directory exists");
+            }
+            else
+            {
+                Console.WriteLine("The directory doesn't exist");
             }
         }
     }
