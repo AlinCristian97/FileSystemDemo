@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace ConsoleUI
 {
@@ -49,6 +50,12 @@ namespace ConsoleUI
             string textFilePath2 = @"E:\Temp\Demos\FileSystem\FileIO\testStream.txt";
 
             FileStream fs = File.Open(textFilePath2, FileMode.Create);
+
+            string randomString = "This is a random string";
+
+            byte[] rsByteArray = Encoding.Default.GetBytes(randomString);
+            
+            fs.Write(rsByteArray, 0, rsByteArray.Length);
         }
     }
 }
