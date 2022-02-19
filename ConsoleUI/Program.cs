@@ -78,6 +78,14 @@ namespace ConsoleUI
             streamWriter.WriteLine("This is another sentence");
             
             streamWriter.Close();
+
+            StreamReader streamReader = File.OpenText(textFilePath3);
+
+            Console.WriteLine("Peek: {0}", Convert.ToChar(streamReader.Peek()));
+            Console.WriteLine("1st string: {0}", streamReader.ReadLine());
+            Console.WriteLine("Everything: {0}", streamReader.ReadToEnd());
+            
+            streamReader.Close();
         }
     }
 }
