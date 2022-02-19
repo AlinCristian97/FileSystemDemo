@@ -9,7 +9,9 @@ namespace ConsoleUI
         {
             string rootPath = @"E:\Temp\Demos\FileSystem";
 
-            bool directoryExists = Directory.Exists(@"E:\Temp\Demos\FileSystem\SubFolder3");
+            string newPath = @"E:\Temp\Demos\FileSystem\SubFolder3\SubSubFolder4";
+            
+            bool directoryExists = Directory.Exists(newPath);
 
             if (directoryExists)
             {
@@ -18,6 +20,7 @@ namespace ConsoleUI
             else
             {
                 Console.WriteLine("The directory doesn't exist");
+                Directory.CreateDirectory(newPath);
             }
         }
     }
