@@ -17,6 +17,8 @@ namespace ConsoleUI
             Console.WriteLine(alinDirectory.Parent);
             Console.WriteLine(alinDirectory.Attributes);
             Console.WriteLine(alinDirectory.CreationTime);
+
+            Directory.Delete(@"C:\Users\Alin-PC\C#DataTemp");
         }
     }
 }
