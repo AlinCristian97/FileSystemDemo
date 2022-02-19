@@ -10,17 +10,29 @@ namespace ConsoleUI
         public static void Main(string[] args)
         {
             string filePath = @"E:\Temp\Demos\FileSystem\TextFiles\Test.txt";
+            
+            var people = new List<Person>();
 
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
             foreach (string line in lines)
             {
-                Console.WriteLine(line);
+                string[] entries = line.Split(',');
+
+                var newPerson = new Person
+                {
+                    FirstName = entries[0],
+                    LastName = entries[1],
+                    Url = entries[2]
+                };
+                
+                people.Add(newPerson);
             }
-            
-            lines.Add("line3 - new");
-            
-            File.WriteAllLines(filePath, lines);
+
+            foreach (Person person in people)
+            {
+                Console.WriteLine($"{person.FirstName} {person.LastName}: {person.Url}");
+            }
         }
     }
 }
