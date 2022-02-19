@@ -9,18 +9,12 @@ namespace ConsoleUI
         {
             string rootPath = @"E:\Temp\Demos\FileSystem";
 
-            string newPath = @"E:\Temp\Demos\FileSystem\SubFolder3\SubSubFolder4";
-            
-            bool directoryExists = Directory.Exists(newPath);
+            string[] files = Directory.GetFiles(rootPath);
+            string destinationFolder = @"E:\Temp\Demos\FileSystem\SubFolder1\";
 
-            if (directoryExists)
+            foreach (string file in files)
             {
-                Console.WriteLine("The directory exists");
-            }
-            else
-            {
-                Console.WriteLine("The directory doesn't exist");
-                Directory.CreateDirectory(newPath);
+                File.Copy(file, $"{destinationFolder}{Path.GetFileName(file)}", true);
             }
         }
     }
