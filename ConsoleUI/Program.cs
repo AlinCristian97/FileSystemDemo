@@ -17,6 +17,10 @@ namespace ConsoleUI
             {
                 Console.WriteLine(line);
             }
+            
+            lines.Add("line3 - new");
+            
+            File.WriteAllLines(filePath, lines);
         }
     }
 }
