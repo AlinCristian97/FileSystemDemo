@@ -9,7 +9,7 @@ namespace ConsoleUI
         {
             string rootPath = @"E:\Temp\Demos\FileSystem";
 
-            var files = Directory.GetFiles(rootPath, "*", SearchOption.TopDirectoryOnly);
+            var files = Directory.GetFiles(rootPath, "*", SearchOption.AllDirectories);
 
             foreach (string file in files)
             {
