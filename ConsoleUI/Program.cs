@@ -45,6 +45,10 @@ namespace ConsoleUI
             {
                 Console.WriteLine($"{file.Name}: {file.Length} bytes");
             }
+
+            string textFilePath2 = @"E:\Temp\Demos\FileSystem\FileIO\testStream.txt";
+
+            FileStream fs = File.Open(textFilePath2, FileMode.Create);
         }
     }
 }
