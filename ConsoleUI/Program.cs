@@ -69,6 +69,15 @@ namespace ConsoleUI
             Console.WriteLine(Encoding.Default.GetString(fileByteArray));
             
             fs.Close();
+            
+            string textFilePath3 = @"E:\Temp\Demos\FileSystem\FileIO\textStreamWriterReader.txt";
+
+            StreamWriter streamWriter = File.CreateText(textFilePath3);
+            streamWriter.Write("This is a random ");
+            streamWriter.WriteLine("sentence");
+            streamWriter.WriteLine("This is another sentence");
+            
+            streamWriter.Close();
         }
     }
 }
